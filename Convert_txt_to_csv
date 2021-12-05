@@ -1,0 +1,13 @@
+import csv
+import pandas as pd
+
+file_path = "/Users/ale/Desktop/Trial_1/CKBWT_1.txt" #Specify to Python the directory where your files are located 
+df_CKBWT_1 = pd.read_csv(file_path, delim_whitespace=True) #The read_csv function opens the file, the delim_whitespace argument allows the columns to be separated correctly
+df_CKBWT_1.to_csv("/Users/ale/Desktop/Trial_1/CKBWT_1.csv",index = False, header=False) #Convert txt to csv file and save it to the designated location. Index = False to remove
+                                                                                         any index,header = False to remove the header
+df_CKBWT_1.to_csv("/Users/ale/Desktop/Trial_1/CKBWT_1.csv", header=["Frame", "Time", "Red_signal", "Green_signal", " ", " ", " "], index=False) #Open the csv file and specify
+                                                                                                                                                 the header name, " " = remove that header. In this particular
+                                                                                                                                                 case, there are 7 columns from the original txt but only the 
+                                                                                                                                                 first 4 contains information, the last 3 are blank and 
+                                                                                                                                                 therefore not needed. 
+ NOTE: This code is written to convert 1 file only.                                                                                                                                        
